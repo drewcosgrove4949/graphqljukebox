@@ -1,0 +1,54 @@
+{
+  "name": "serverless-graphql",
+  "version": "1.0.0",
+  "description": "A serverless app built using AWS lambda, API gateway, React and graphql",
+  "main": "index.js",
+  "scripts": {
+    "create-iam": "D:/users/c001shi/code/javascript/jukebox/scripts/create-iam.sh",
+    "create-s3": "D:/users/c001shi/code/javascript/jukebox/scripts/create-s3-bucket.sh",
+    "deploy": "node D:/users/c001shi/code/javascript/jukebox/node_modules/dpl/dpl.js",
+    "create-api": "D:/users/c001shi/code/javascript/jukebox/scripts/create-api.sh",
+    "deploy-app": "npm run deploy && npm run create-api",
+    "test": "node D:/users/c001shi/code/javascript/jukebox/node_modules/.bin/mocha ./test/**/*.js",
+    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha ./test/**/*.js --report lcov -- -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhilaravi/serverless-graphql.git"
+  },
+  "keywords": [
+    "AWS",
+    "Lambda",
+    "React",
+    "GraphQL",
+    "API",
+    "Gateway",
+    "Serverless"
+  ],
+  "author": "Nikhila Ravi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikhilaravi/serverless-graphql/issues"
+  },
+  "homepage": "https://github.com/nikhilaravi/serverless-graphql#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.3.7",
+    "aws-sdk-mock": "^1.0.10",
+    "dpl": "^3.0.1",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "simple-mock": "^0.6.0",
+    "sinon": "^1.17.4"
+  },
+  "files_to_deploy": [
+    "package.json",
+    "index.js",
+    "lib/",
+    ".env"
+  ],
+  "dependencies": {
+    "env2": "^2.0.7",
+    "graphql": "^0.5.0",
+    "lodash.isempty": "^4.2.1"
+  }
+}
